@@ -21,7 +21,7 @@ import fr.verdiangames.main.inputs.Input;
 public class Main extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 	
-	public static final int SCALE = 1;
+	public static final int SCALE = 2;
 	public static final int WIDTH = 900 / SCALE;
 	public static final int HEIGHT = 480 / SCALE;
 	

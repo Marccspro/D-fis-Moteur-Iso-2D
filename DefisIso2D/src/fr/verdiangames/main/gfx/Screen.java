@@ -8,7 +8,7 @@ public class Screen {
 	public int[] zBuffer;
 	public int xIsoOrigin;
 	public int yIsoOrigin;
-	public int tileSize = 64;
+	public int tileSize = 32;
 	
 	public Screen(int width, int height) {
 		this.width = width;
@@ -190,10 +190,10 @@ public class Screen {
 	public void drawLine(int xa, int ya, int xb, int yb, int color, int size) {
 		int xx = xa + xb;
 		int yy = ya + yb;
-		double lenght = Math.sqrt(xx * xx + yy * yy);
+		double lenght = xx * xx + yy * yy;
 		
-		for (int i = 0; i < lenght; i++) {
-			double n = (double)i / lenght;
+		for (int i = 0; i * i < lenght; i++) {
+			double n = (double)(i * i) / lenght;
 			int xLerp = (int) (xa + (xb - xa) * n);
 			int yLerp = (int) (ya + (yb - ya) * n);
 			
